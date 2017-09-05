@@ -1,0 +1,29 @@
+{
+  "name": "csurf-noroutes",
+  "version": "1.0.0",
+  "description": "A csurf fork implementing a routes exclusion option",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atelierleparisien/npm_modules.git"
+  },
+  "keywords": [
+    "csrf",
+    "token"
+  ],
+  "author": "Datamays for Le Parisien",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/atelierleparisien/npm_modules/issues"
+  },
+  "homepage": "https://github.com/atelierleparisien/npm_modules#readme",
+  "dependencies": {
+    "cookie": "^0.3.1",
+    "cookie-signature": "^1.0.6",
+    "csrf": "^3.0.6",
+    "http-errors": "^1.6.2"
+  }
+}
