@@ -1,6 +1,6 @@
 {
   "name": "csurf-noroutes",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "A csurf fork implementing a routes exclusion option",
   "main": "index.js",
   "scripts": {
