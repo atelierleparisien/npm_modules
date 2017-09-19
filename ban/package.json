@@ -1,13 +1,23 @@
 {
   "name": "ban",
   "version": "1.0.0",
-  "description": "",
+  "description": "Ce module permet une utilisation simple de deux des WebServices de la BAN: le géocodage (obtenir les coordonnées GPS à partir d'une adresse) et le géocodage inverse (obtenir une adresse à partir de coordonnées GPS).",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+    "keywords": [
+    "BAN",
+    "geocodage",
+    "geocodage inverse"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atelierleparisien/npm_modules.git"
+  },
+  "author": "Cellule DATA du Parisien pour Le Parisien",
+  "homepage": "https://github.com/atelierleparisien/npm_modules/blob/master/ban/README.md",
+  "license": "MIT",
   "dependencies": {
     "curl": "^0.1.4"
   }
