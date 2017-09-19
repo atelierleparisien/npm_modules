@@ -12,13 +12,13 @@ L'API de la BAN est dispnible à cette adresse : [https://adresse.data.gouv.fr/a
 ## Installation
 
 ```sh
-$ npm install ban
+$ npm install node-ban
 ```
 
 ## API
 
 ```js
-var ban = require('ban');
+var ban = require('node-ban');
 ```
 
 ### ban.geocode(adresse, options, callback)

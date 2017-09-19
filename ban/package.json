@@ -1,6 +1,6 @@
 {
   "name": "node-ban",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Ce module permet une utilisation simple de deux des WebServices de la BAN: le géocodage (obtenir les coordonnées GPS à partir d'une adresse) et le géocodage inverse (obtenir une adresse à partir de coordonnées GPS).",
   "main": "index.js",
   "scripts": {
