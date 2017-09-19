@@ -1,64 +1,76 @@
-# csurf with a ignoring routes ability
+# BAN : module node pour utilisation de la Base Adresse Nationale
 
 [![NPM Version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][downloads-url]
 
-Node.js [CSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery) protection middleware fork based on the csurf module.
+La Base Adresse Nationale est une base de données qui a pour but de référencer l'intégralité des adresses du territoire français. [BAN](https://adresse.data.gouv.fr/) 
 
-Requires either a session middleware or [cookie-parser](https://www.npmjs.com/package/cookie-parser) to be initialized first.
+Ce module permet une utilisation simple de deux de ses WebServices : le géocodage (obtenir les coordonnées GPS à partir d'une adresse) et le géocodage inverse (obtenir une adresse à partir de coordonnées GPS).
 
-  * If you are setting the ["cookie" option](#cookie) to a non-`false` value,
-    then you must use [cookie-parser](https://www.npmjs.com/package/cookie-parser)
-    before this module.
-  * Otherwise, you must use a session middleware before this module. For example:
-    - [express-session](https://www.npmjs.com/package/express-session)
-    - [cookie-session](https://www.npmjs.com/package/cookie-session)
-
-If you have questions on how this module is implemented, please read
-[Understanding CSRF](https://github.com/pillarjs/understanding-csrf).
+L'API de la BAN est dispnible à cette adresse : [https://adresse.data.gouv.fr/api](https://adresse.data.gouv.fr/api)
 
 ## Installation
 
 ```sh
-$ npm install csurf-noroutes
+$ npm install ban
 ```
 
 ## API
 
 ```js
-var csurfNoRoutes = require('csurf-noroutes')
+var ban = require('ban');
 ```
 
-### csurfNoRoutes([options])
+### ban.geocode(adresse, options, callback)
 
-Create a middleware for CSRF token creation and validation. This middleware
-adds a `req.csrfToken()` function to make a token which should be added to
-requests which mutate state, within a hidden form field, query-string etc.
-This token is validated against the visitor's session or csrf cookie.
+Récupère un geojson FeatureCollection.
+Exemple :
+```js
+var options = {};
+
+ban.geocode('8 bd du port', options, function(res) {
+    console.log(res);
+});
+```
+
 
 #### Options
 
-The `csurf-noroutes` function takes an optional `options` object that may contain
-any of the csurf legacy keys.
-
-A new option is available
-
-##### ignoreRoutes
-an array of routes that you want the module to ignore when looking up for a valid CSRF (typically routes used by the POST method).
-This parameter supports the use of regular expressions to define url patterns.
-
-With Strings : 
+Les options disponibles sont celles documentées sur le site de la BAN (excepté l'autocomplete), à savoir:
 ```js
-{ignoreRoutes:['/my/first/route','/mySecond/route','etc..']}
+var options = {
+    limit: 100,
+    postcode:"44380", //Type String pour cas particulier de la Corse
+    priority: {
+        lat: 48.789,
+        lon: 2.789
+    },
+    type:"street"
+};
 ```
-With a Regex : 
+
+
+
+### ban.reverseGeocode(coordinates, options, callback)
+
+Récupère un geojson FeatureCollection.
+Exemple :
 ```js
-{ignoreRoutes:[/\/remoteCalls\/(.*)/g]}
+ban.reverseGeocode({ lat: "48.357", lon: "2.37" }, { type: "street" }, function(res) {
+    console.log(res);
+});
 ```
-Both : 
+
+#### Options
+
+Les options disponibles sont celles documentées sur le site de la BAN, à savoir:
 ```js
-{ignoreRoutes:['/remoteCalls/login',/\/remoteCalls\/(.*)/g]}
+var options = {
+    type:"street"
+};
 ```
+
+
 
 ## License
 
