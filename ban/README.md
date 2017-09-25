@@ -7,7 +7,9 @@ La Base Adresse Nationale est une base de données qui a pour but de référence
 
 Ce module permet une utilisation simple de deux de ses WebServices : le géocodage (obtenir les coordonnées GPS à partir d'une adresse) et le géocodage inverse (obtenir une adresse à partir de coordonnées GPS).
 
-L'API de la BAN est dispnible à cette adresse : [https://adresse.data.gouv.fr/api](https://adresse.data.gouv.fr/api)
+L'API de la BAN est disponible à cette adresse : [https://adresse.data.gouv.fr/api](https://adresse.data.gouv.fr/api)
+
+Les données disponibles via cette API sont sous licence [ODbL](https://fr.wikipedia.org/wiki/Open_Database_License)
 
 ## Installation
 
@@ -74,9 +76,10 @@ var options = {
 
 ## License
 
-[MIT](LICENSE)
+[MIT](LICENSE) Pour le code
+[ODbL](https://fr.wikipedia.org/wiki/Open_Database_License) Pour les données
 
-[npm-image]: https://img.shields.io/npm/v/csurf-noroutes.svg
-[npm-url]: https://npmjs.org/package/csurf-noroutes
-[downloads-image]: https://img.shields.io/npm/dm/csurf.svg
-[downloads-url]: https://npmjs.org/package/csurf-noroutes
+[npm-image]: https://img.shields.io/npm/v/node-ban.svg
+[npm-url]: https://npmjs.org/package/node-ban
+[downloads-image]: https://img.shields.io/npm/dm/node-ban.svg
+[downloads-url]: https://npmjs.org/package/node-ban
