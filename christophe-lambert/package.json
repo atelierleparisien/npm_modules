@@ -1,0 +1,24 @@
+{
+  "name": "christophe-lambert",
+  "version": "1.1.0",
+  "description": "Permet la conversion de coordonnées WGS84 en LAMBERT 2 ETENDU et Inversement",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atelierleparisien/npm_modules.git"
+  },
+  "keywords": [
+    "coordonnees",
+    "lambert",
+    "WGS84"
+  ],
+  "author": "Atelier le Parisien pour Le Parisien",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/atelierleparisien/npm_modules/issues"
+  },
+  "homepage": "https://github.com/atelierleparisien/npm_modules#readme"
+}
